@@ -1,0 +1,148 @@
+﻿@model Palizma.Web.Models.ViewModels.Register.RegisterViewModel
+@{
+    ViewData["Title"] = "sign up";
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="~/style/main.css" />
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <!-- animation css (animate css) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body id="body">
+    <main class="main main animate__animated animate__flash">
+        <div class="container-fluid login">
+            <div class="row">
+                <div class="col-12 col-lg-6  wrapper-login">
+                    <nav>
+                        <div class="bg-brand"></div>
+                        <h5>Palizma</h5>
+                    </nav>
+                    <div class="wrapper-login-main">
+                        @*<div class="top-login">
+                            <h4 class="title">Create an account</h4>
+                            <button class="sign-in">
+                            <div class="bg-google"></div>
+                            <h5>Register with Google</h5>
+                            </button>
+                            </div>*@
+                        <form asp-controller="Account" asp-action="register" method="post" id="form-signUp" class="create-Ac">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <fieldset>
+                                <legend>or use one of these options</legend>
+                            </fieldset>
+                            <div class="wrapper-form">
+                                <div class="wrapper-title-input">
+                                    <label asp-for="FullName"></label>
+                                </div>
+                                <br>
+                                <input asp-for="FullName" type="text" id="fullName" class="full-name" placeholder="Enter your first name and last name.">
+                            </div>
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+
+                            <div class="wrapper-form">
+                                <div class="wrapper-title-input">
+                                    <label asp-for="Email"> @*<small>(Contact number with country code)</small>*@</label>
+                                </div>
+                                <br>
+                                <input asp-for="Email" type="text" id="emailPhone" class="email-phone" placeholder="info@Palizma.com">
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+
+                            <div class="wrapper-form">
+                                <div class="wrapper-title-input">
+                                    <label asp-for="Password"></label>
+                                </div>
+                                <br>
+                                <input asp-for="Password" type="text" id="emailPhone" class="email-phone">
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                            <div class="wrapper-form">
+                                <div class="wrapper-title-input">
+                                    <label asp-for="RePassword"></label>
+                                </div>
+                                <br>
+                                <input asp-for="RePassword" type="text" id="emailPhone" class="email-phone">
+                            </div>
+                            <span asp-validation-for="RePassword" class="text-danger"></span>
+
+                            @*               <div class="wrapper-form">
+                                <div class="wrapper-title-input">
+                                <label asp-for="PhoneNumber"></label>
+                                </div>
+                                <br>
+                                <input asp-for="PhoneNumber" type="text" id="emailPhone" class="email-phone" placeholder="+98 9123456789">
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>*@
+
+                            <div class="wrapper-form-two">
+                                <button type="submit" id="btn-register"><h5>Register</h5></button>
+                                <div class="wrapper-buttom-form">
+                                    <p>Do you have an account?<a asp-controller="Account" asp-action="login"> Log in</a></p>
+                                    <div class="wrapper-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox" />
+                                            <span>Remember me</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6  wrapper-carecator">
+                    <div class="wrapper-top">
+                        <img src="~/image/Vector-top-right.png" class="Vector-top-righ">
+                        <img src="~/image/Vector-top-location.png" class="Vector-top-location">
+                        <div class="wrapper-arrow-Curved">
+                            <img src="~/image/Vector-top-Curved-arrow.png" alt="" class="Vector-top-Curved-arrow">
+                            <img src="~/image/Vector-top-Arrows-curved.png" alt="" class="Vector-top-Arrows-curved">
+                        </div>
+                        <img src="~/image/Vector-top-center.png" class="Vector-top-center">
+                        <img src="~/image/Vector-top-left.png" class="Vector-top-left">
+                        <img src="~/image/Vector-top-left-bottom.png" class="Vector-top-left-bottom">
+                        <img src="~/image/Vector-bottom-center.png" class="Vector-bottom-center">
+                        <img src="~/image/Vector-top-location.png" alt="" class="Vector-bottom-center-location">
+                        <img src="~/image/Vector-buttom-right-1.png" class="Vector-buttom-right-1">
+                        <img src="~/image/Vector-buttom-right-2.png" class="Vector-buttom-right-2">
+                        <img src="~/image/Vector-buttom-right-3.png" class="Vector-buttom-right-3">
+                        <img src="~/image/Vector-buttom-right-4.png" class="Vector-buttom-right-4">
+                        <img src="~/image/Vector-buttom-right-5.png" class="Vector-buttom-right-5">
+                        <img src="~/image/Vector-buttom-right-6.png" class="Vector-buttom-right-7">
+                        <img src="~/image/Vector-top-location.png" class="Vector-center-right-location-right">
+                        <img src="~/image/Vector-top-location.png" class="Vector-center-left-location-right">
+                        <img src="~/image/person-turist-Arman.png" class="person-turist-Arman">
+                    </div>
+                    <div class="wrapper-center">
+                        <img src="~/image/Vector-center-left.png" class="Vector-center-left-bottom">
+                        <img src="~/image/Vector-center-left-location.png" class="Vector-center-left-location">
+                        <img src="~/image/Vector-center-right-location.png" class="Vector-center-right-curved">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/scripts/sign-up.js" type="module"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+</body>
+</html>
+

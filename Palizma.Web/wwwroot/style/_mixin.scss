@@ -1,0 +1,638 @@
+/*global start start*/
+* {
+  box-sizing: border-box;
+  text-decoration: none !important;
+  list-style: none;
+}
+i {
+  font-family: "fontawesome" !important;
+  color: #fff;
+}
+
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 15px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   color: transparent;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: $cl_6;
+//   border-radius: 25px;
+// }
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
+.success-inp {
+  outline: 1px solid $cl_12 !important;
+}
+.error-inp {
+  outline: 1px solid $cl_13 !important ;
+}
+.bg-main{
+  &.active{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 44;
+  cursor: pointer;
+  }
+}
+// /*global start end*/
+// Sizing
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin colorIng($color, $bg) {
+  color: $color;
+  background: $bg;
+}
+@mixin flex($Jc, $Al, $direc) {
+  display: flex;
+  justify-content: $Jc;
+  align-items: $Al;
+  flex-direction: $direc;
+}
+@mixin styleingMenu() {
+  width: 75%;
+  @include flex(space-between, center, row);
+  .menu-center {
+    margin: 0;
+    padding: 0;
+    @include flex(space-between, center, row);
+    @include size(525px, auto);
+    li {
+      a {
+        @include textStyle(18px, $cl_2, "Regular", 700, capitalize);
+        letter-spacing: 0.5px;
+        &.active {
+          color: #fff;
+        }
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    @include MediaQery($xl) {
+      width: 460px;
+    }
+  }
+  .menu-right {
+    margin: 0;
+    padding: 0;
+    @include flex(space-between, center, row);
+    @include size(205px, auto);
+    li {
+      .log-in {
+        @include textStyle(18px, white, "Regular", 700, capitalize);
+        letter-spacing: 0.5px;
+      }
+      .sign-up {
+        @include sign-up-btn();
+      }
+    }
+  }
+  @include MediaQery($xl) {
+    width: 85%;
+    justify-content: space-around;
+  }
+  @include MediaQery($lg) {
+    display: none;
+  }
+}
+@mixin sign-up-btn() {
+  @include size(132px, 56px);
+  background: linear-gradient(106.16deg, #ff9752 1.15%, #ea6d1b 75.83%, #e86915 105.82%);
+  box-shadow: 0px 12px 11px -2px rgba(95, 38, 0, 0.17);
+  border-radius: 45px;
+  @include flex(center, center, row);
+  line-height: 21px;
+  @include textStyle(18px, white, Gilroy-ExtraBold, normal, unset);
+  letter-spacing: 0.5px;
+}
+@mixin button() {
+  border: none;
+  outline: none;
+  @include size(261px, 72px);
+  background: linear-gradient(106.16deg, #ff9752 1.15%, #ea6d1b 75.83%, #e86915 105.82%);
+  box-shadow: 0px 12px 11px -2px rgba(95, 38, 0, 0.17);
+  border-radius: 45px;
+  @include flex(center, center, row);
+  line-height: 21px;
+  @include textStyle(18px, white, Gilroy-ExtraBold, normal, unset);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+@mixin titleFooter() {
+  @include textStyle(24px, white, "Regular", 700, capitalize);
+  letter-spacing: 0.3px;
+  margin: 0;
+  @include MediaQery($xl) {
+    font-size: 22px;
+  }
+}
+@mixin buttonLogin {
+  width: 90%;
+  display: block;
+  @include flex(center, center, row);
+  .bg-google {
+    @include size(32px, 32px);
+    background-image: url(../image/logo-Google.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  width: 90%;
+  height: 76px;
+  background: #f2f1f1;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  h5 {
+    padding-left: 8px;
+    margin: 0;
+    @include titleFooter();
+    font-size: 22px;
+    color: $cl_5;
+    text-transform: unset;
+    @include MediaQery($sm) {
+      font-size: 18px !important;
+    }
+  }
+  @include MediaQery($xl2) {
+    width: 100%;
+  }
+  @include MediaQery($md) {
+    height: 65px;
+  }
+}
+@mixin styleingCheckBox() {
+  .checkbox {
+    @include flex(space-between, center, row);
+    @include size(155px, auto);
+    span {
+      @include titleFooter();
+      font-size: 18px !important;
+      color: $cl_5;
+      position: relative;
+      font-weight: 500;
+    }
+    input {
+      @include size(20px, 20px);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border-radius: 4px;
+      border: 1px solid $cl_5;
+      outline: none;
+      transition-duration: 0.3s;
+      background-color: #fff;
+      cursor: pointer;
+      position: relative;
+    }
+    input {
+      &:checked {
+        border: 1px solid $cl_6;
+      }
+      &:checked + span::before {
+        content: "\2713";
+        display: block;
+        position: absolute;
+        text-align: center;
+        color: #e86915;
+        position: absolute;
+        left: -31%;
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%);
+        top: 1px;
+        font-weight: bolder;
+      }
+      &:active {
+        border: 2px solid #34495e;
+      }
+    }
+  }
+}
+@mixin captionFooter() {
+  @include textStyle(18px, white, "Light", normal, capitalize);
+  margin: 0;
+  line-height: 2;
+  @include MediaQery($xl) {
+    font-size: 17px;
+  }
+}
+@mixin textStyle($size, $color, $font, $fontWidth, $transformText) {
+  font-size: $size;
+  color: $color;
+  font-family: $font;
+  font-weight: $fontWidth;
+  text-transform: $transformText;
+}
+@mixin upTitlePage() {
+  @include textStyle(24px, $cl_6, "Playfair Display", normal, uppercase);
+}
+@mixin titlePage() {
+  @include textStyle(48px, $cl_5, "Playfair Display", normal, capitalize);
+}
+@mixin nav {
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(74px);
+  height: 99px;
+  width: 100%;
+  &.not-home{
+    background-color: $bg_4;
+  }
+  @include size(100%, 99px);
+  position: absolute;
+  width: 100%;
+  z-index: 444;
+  transition: all 0.3s linear;
+  &.top{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #12290d6e!important;
+  }
+
+  .container {
+    @include flex(space-between, center, row);
+    .menu {
+      @include flex(space-between, center, row);
+      width: 850px;
+      @include MediaQery($xl2){
+        width: 650px;
+      }
+      transition: all 0.3s linear;
+      @include MediaQery($lg){
+        padding: 20px;
+        position: fixed;
+        background: $bg_4;
+        height: 787px;
+        bottom: 0;
+        top: 0;
+        width: 280px;
+        left: -280px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+        justify-content: unset;
+        row-gap: 70px;
+        display: flex;
+      }
+      &.active {
+        left: 0;
+       }
+      .menu-center {
+        @include flex(space-between, center, row);
+        width: 500px;
+        margin: 0;
+        padding: 0;
+        li {
+          a {
+            &.active {
+              color: #fff;
+            }
+           @include textStyle(18px,$cl_2 , 'Regular',700,capitalize);
+           letter-spacing: 0.4px;
+           &:hover{
+            color: #fff ;
+          }
+          }
+        }
+        @include MediaQery($xl2){
+          width: 390px;
+        }
+        @include MediaQery($lg){
+       flex-direction: column;
+       row-gap: 50px;
+       width: 100%;
+        }
+     
+      }
+      .menu-right {
+        width: 250px;
+        @include flex(space-between, center, row);
+        margin: 0;
+        padding: 0;
+        li {
+          a {
+            @include textStyle(18px,$cl_2 , 'Regular',700,capitalize);
+            letter-spacing: 0.4px;
+            color: #fff;
+            &.sign-up{
+              @include sign-up-btn()
+            }
+           
+          }
+          
+        }
+        @include MediaQery($xl2){
+          width: 200px;
+        }
+        @include MediaQery($lg){
+        
+          flex-direction: column;
+          row-gap: 30px;
+          width: 100%;
+         }
+      }
+   
+    }
+    .wrapper-brand{
+        @include flex(space-between,center ,row );
+      .bg-brand{
+        @include size(39px, 25px);
+        background-image: url(../image/photo-brand-two.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      h5{
+        margin: 0;
+        padding-left: 8px;
+        @include titleFooter();
+        font-size: 24px !important;
+        background: -webkit-linear-gradient(#fff, #f2f2ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    #menu-bars {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+      @include MediaQery($lg) {
+        display: block;
+      }
+    }
+  }
+}
+@mixin box() {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+  }
+  @include size(380px, 476);
+  border-radius: 25px;
+  .box-code {
+    position: absolute;
+    width: 86px;
+    height: 48px;
+    @include size(86px, 48px);
+    background: #ffffff;
+    right: 25px;
+    top: 25px;
+    box-shadow: 6px 50px 52px -47px rgba(0, 43, 12, 0.07);
+    @include textStyle(18px, $cl_5, "Bold", unset, unset);
+    border-radius: 15px;
+    @include flex(center, center, column);
+  }
+  .box-content {
+    z-index: 4;
+    background: #ffffff;
+    box-shadow: 6px 50px 55px -47px rgba(0, 43, 12, 0.15);
+    border-radius: 15px;
+    @include size(75%, 171px);
+    @include flex(space-around, flex-start, column);
+    padding: 15px 30px;
+    .Place-name {
+      @include textStyle(14px, $cl_4, unset, unset, uppercase);
+      font-family: "Playfair Display", serif, normal;
+      letter-spacing: 5.5px;
+    }
+    .Place {
+      @include textStyle(24px, $cl_5, unset, unset, capitalize);
+      font-family: "Playfair Display", serif, normal;
+      letter-spacing: 0.5px;
+    }
+    .wrapper-Visit {
+      @include flex(space-between, center, row);
+      svg {
+        margin-right: 5px;
+      }
+      .Visit {
+        margin-right: 5px;
+        .Review {
+          @include textStyle(13px, $cl_4, unset, "Light", capitalize);
+        }
+      }
+    }
+  }
+  @include MediaQery($lg) {
+    @include size(329px, 440px);
+  }
+  @include MediaQery($md) {
+    flex-grow: 2;
+    height: 600px;
+  }
+  @include MediaQery($sm) {
+    height: 400px;
+  }
+}
+@mixin searchHeader {
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  @include size(205px, 95px);
+  @include flex(space-evenly, center, row);
+  width: 528px;
+  height: 95px;
+  background: rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(74px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 59px;
+
+  .wrapper-Date {
+    @include flex(space-between, center, row);
+  }
+  .wrapper-Location {
+    @include flex(space-around, center, row-reverse);
+    width: 40%;
+    .Location-header {
+      width: 75%;
+      @include flex(space-between, flex-start, column);
+      .text-header {
+        @include size(65%, auto);
+        @include flex(space-between, baseline, row);
+        h5 {
+          @include textStyle(14px, $cl_1, "Regular", 700, capitalize);
+          letter-spacing: 0.5px;
+        }
+        #show-dropDown-Location {
+          cursor: pointer;
+        }
+        svg {
+          cursor: pointer;
+          transition: all 0.3s ease;
+          &.active {
+            transform: rotate(180deg);
+            path {
+              stroke: $cl_1;
+            }
+          }
+        }
+        @include MediaQery($sm) {
+          width: 80%;
+        }
+      }
+      .input-location {
+        width: 80%;
+        background: transparent;
+        border: none;
+        @include textStyle(16px, $cl_3, "Regular", normal, capitalize);
+        letter-spacing: 0.8px;
+        border-bottom: 1px solid $cl_2;
+        outline: none;
+      }
+    }
+    .logo-Location {
+      width: 50px;
+      height: 30px;
+    }
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      right: -28px;
+    }
+  }
+  .wrapper-Date {
+    @extend .wrapper-Location;
+    display: inline-flex;
+    &::before {
+      width: 0;
+      height: 0;
+    }
+  }
+  .Search-logo-button {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    cursor: pointer;
+    @include MediaQery($md) {
+      width: 12%;
+      position: absolute;
+      right: 10px;
+      top: 32px;
+      cursor: pointer;
+    }
+  }
+
+  .wrapper-sugect {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    @include flex(flex-start, flex-start, column);
+
+    gap: 20px;
+    @include size(40%, auto);
+    background: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(104px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    top: 100%;
+    height: max-content;
+    padding: 15px 30px;
+    li {
+      color: $cl_3;
+      font-family: "Light";
+      cursor: pointer;
+    }
+    &.locationTypeing {
+      right: unset;
+      left: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &.dateTypeing {
+      right: 0;
+      left: unset;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: flex;
+    }
+  }
+  &.locationTypeing {
+    border-bottom-left-radius: 0;
+  }
+  &.dateTypeing {
+    border-bottom-right-radius: 0;
+  }
+  @include MediaQery($xl) {
+    width: 500px;
+    margin: 0 auto;
+  }
+  @include MediaQery($lg) {
+    justify-content: center !important;
+  }
+  @include MediaQery($md) {
+    width: 100%;
+  }
+}
+// sizes
+$xl: 2000px;
+$xl2: 1200px;
+$lg: 992px;
+$md: 786px;
+$sm: 568px;
+$xs: 320px;
+
+/* responseve */
+@mixin MediaQery($screen) {
+  @media only screen and (max-width: $screen) {
+    @content;
+  }
+}
+.highlicht {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $cl_6;
+  border-radius: 3px;
+  transition: all 0.2s ease-out;
+  transform: translate(405px, 58.2118px);
+  z-index: 1;
+  &.hide {
+    display: none;
+  }
+  &.show {
+    display: block;
+  }
+  @include MediaQery($lg) {
+    display: none !important ;
+  }
+}

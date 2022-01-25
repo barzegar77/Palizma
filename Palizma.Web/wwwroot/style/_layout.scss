@@ -1,0 +1,1774 @@
+#body {
+    overflow-x: hidden;
+    position: relative;
+
+    .nav {
+        @include nav();
+    }
+
+    .header {
+        position: relative;
+
+        #shadow-left {
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+
+        &.header-bg {
+            background-image: linear-gradient(269.46deg, rgba(0, 0, 0, 0.6) 6.63%, rgba(0, 0, 0, 0) 80.57%), url(../image/back-image.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include size(100%, 785px);
+        }
+
+        position: relative;
+
+        .nav {
+            @include size(100%, 99px);
+            @include colorIng(unset, $bg_1);
+
+            &.nav-turist {
+                @include colorIng(unset, $bg_4);
+            }
+
+            .container {
+                position: relative;
+                @include flex(space-between, center, row);
+
+                .wrapper-brand {
+                    @include flex(space-between, revert, row);
+                    @include size(11%, auto);
+
+                    h5 {
+                        @include titleFooter();
+                        letter-spacing: 0.5px;
+                    }
+
+                    .bg-brand {
+                        @include size(39px, 25px);
+                        background-image: url(../image/photo-brand-two.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+
+                    @include MediaQery($sm) {
+                        width: 40%;
+                    }
+                }
+            }
+
+            backdrop-filter: blur(74px);
+        }
+
+        #container-header-content {
+            padding: 120px 0;
+            padding-top: 150px;
+
+            &.p-none {
+                padding: 50px !important;
+            }
+
+            .wrapper-fillter-header-turist {
+                @include searchHeader();
+                background: #ffffff;
+                box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.05);
+                border-radius: 25px !important;
+                @include size(1056px !important, 100px !important);
+                justify-content: space-around;
+                max-width: 100%;
+                flex-wrap: wrap;
+
+                @include MediaQery($lg) {
+                    height: auto !important;
+                    gap: 46px;
+                    align-items: flex-end;
+                    justify-content: unset;
+                    padding: 25px;
+                }
+
+                @include MediaQery($md) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .wrapper-Location {
+                    width: 22%;
+                    justify-content: space-evenly;
+                    height: 80%;
+
+                    @include MediaQery($lg) {
+                        width: 270px;
+                    }
+
+                    @include MediaQery($md) {
+                        width: 100%;
+                    }
+
+                    .Location-header {
+                        width: 55%;
+                        flex-direction: row;
+                        align-items: center;
+
+                        @include MediaQery($lg) {
+                            width: 65%;
+                        }
+
+                        .text-header {
+                            display: flex;
+                            flex-direction: column;
+                            height: 50px;
+                            justify-content: space-between;
+
+                            h5 {
+                                margin: 0;
+                                color: $cl_7;
+                            }
+                        }
+
+                        input {
+                            width: 100% !important;
+                            color: $cl_5 !important;
+                            font-family: "Light" !important;
+                            font-weight: 700 !important;
+                            text-transform: capitalize !important;
+                        }
+                    }
+                }
+
+                .wrapper-search-icone {
+                    @include size(60px, 40px);
+                    @include flex(center, center, row);
+                    border-left: 1px solid #a8a8a8;
+                    border-right: 1px solid #a8a8a8;
+                }
+
+                .btn-search-header {
+                    @include sign-up-btn();
+                    outline: none;
+                    border: none;
+                    @include size(167px, 56px);
+                    @include flex(space-evenly, center, row);
+                }
+            }
+        }
+
+        .content {
+            z-index: 40;
+
+            &.turist {
+                height: unset;
+                width: unset;
+            }
+
+            position: relative;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(57px);
+
+            .fellajantz {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .left-bottom-fellajantz {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            .right-fellajantz {
+                position: absolute;
+                right: 0;
+            }
+
+            .container,
+            .container-fluid {
+                .wrapper-content {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    @include size(100%, 100%);
+
+                    .wrapper-turist {
+                        position: relative;
+                        top: 32%;
+
+                        .turist-photo {
+                            width: 100%;
+                        }
+
+                        .background-turist {
+                            position: absolute;
+                            z-index: -7;
+                            left: 15%;
+                            top: 30%;
+                            right: 0;
+                            width: 76%;
+
+                            @include MediaQery($xl) {
+                                top: 24%;
+                            }
+
+                            @include MediaQery($lg) {
+                                top: 33%;
+                            }
+                        }
+
+                        @include MediaQery($xl) {
+                            top: 40%;
+                        }
+
+                        @include MediaQery($lg) {
+                            top: 0;
+                            width: 50%;
+                        }
+
+                        @include MediaQery($lg) {
+                            margin-left: auto;
+                            position: absolute;
+                            right: 0;
+                            top: 57%;
+                        }
+
+                        @include MediaQery($md) {
+                            top: 79%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        @include MediaQery($md) {
+                            top: 60%;
+                            width: 55%;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    .container-text {
+                        @include flex(space-around, flex-start, column);
+                        position: relative;
+                        height: 60%;
+                        transform: translateY(205px);
+
+                        .title {
+                            @include textStyle(60px, $cl_3, unset, unset, capitalize);
+                            font-family: "Playfair Display", serif, normal;
+                            text-align: center;
+
+                            span {
+                                color: $cl_1;
+                            }
+
+                            @include MediaQery($xl) {
+                                font-size: 55px;
+                            }
+
+                            @include MediaQery($md) {
+                                font-size: 36px;
+                            }
+
+                            @include MediaQery($sm) {
+                                font-size: 30px;
+                            }
+                        }
+
+                        .caption {
+                            @include textStyle(18px, $cl_4, "bold", 700, capitalize);
+                            margin: 0 auto;
+
+                            @include MediaQery($xl) {
+                                font-size: 17px;
+                            }
+
+                            @include MediaQery($sm) {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .wrapper-fillter-header {
+                            @include searchHeader();
+                        }
+
+                        .curved-line {
+                            position: absolute;
+                            right: 10px;
+                            top: 205px;
+
+                            @include MediaQery($lg) {
+                                top: 38%;
+                                right: -101px;
+                            }
+
+                            @include MediaQery($lg) {
+                                right: 80px;
+                                display: block;
+                                top: 32%;
+                            }
+
+                            @include MediaQery($md) {
+                                right: 0;
+                                display: none;
+                            }
+                        }
+
+                        @include MediaQery($lg) {
+                            transform: translateY(80px);
+                            height: 50%;
+                        }
+
+                        @include MediaQery($md) {
+                            text-align: center;
+                        }
+                    }
+
+                    @include MediaQery($xl) {
+                        grid-template-columns: 56% 45%;
+                    }
+
+                    @include MediaQery($lg) {
+                        grid-template-columns: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        overflow: hidden;
+
+        .container {
+            position: relative;
+
+            .wrapper-boxs-turisty {
+                @include flex(space-between, center, row);
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .box-turisty {
+                    @include size(305px, 430px);
+                    background: #ffffff;
+                    box-shadow: 0px 6px 21px rgba(0, 0, 0, 0.09);
+                    border-radius: 22px;
+                    @include flex(space-evenly, flex-start, column);
+                    padding-left: 30px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: translateY(-30px);
+                    }
+
+                    .place {
+                        @include textStyle(24px, $cl_5, "Playfair Display", normal, capitalize);
+                    }
+
+                    .date {
+                        @include textStyle(14px, $cl_5, "Regular", normal, capitalize);
+                        letter-spacing: 1px;
+                    }
+
+                    .place-address {
+                        @include textStyle(14px, $cl_4, "Regular", 400, capitalize);
+                    }
+
+                    .wrapper-img {
+                        @include size(100%, 173px);
+
+                        img {
+                            object-fit: cover;
+                            @include size(100%, 100%);
+                            border-radius: 22px;
+                        }
+                    }
+
+                    .caption-box {
+                        @include size(100%, 50px);
+                        @include flex(space-between, flex-end, row);
+
+                        .wrapper-caption {
+                            height: 100%;
+                            @include flex(space-between, center, column);
+
+                            span {
+                                @include textStyle(14px, $cl_5, "Regular", normal, capitalize);
+                            }
+
+                            #price {
+                                margin: 0;
+                                @include textStyle(24px, $cl_5, "Black", 700, capitalize);
+                            }
+                        }
+
+                        button {
+                            @include size(90px, 41px);
+                            @include flex(center, center, row);
+                            background-color: #fff !important;
+                            outline: none;
+                            border: 1px solid $cl_6;
+                            box-sizing: border-box;
+                            box-shadow: 0px 12px 11px -2px rgba(95, 38, 0, 0.17);
+                            border-radius: 45px;
+                            @include textStyle(18px, $cl_6, "Black", 700, capitalize);
+                        }
+                    }
+                }
+            }
+
+            .control-up-boxs {
+                @include flex(space-between, center, row);
+                padding: 120px 0;
+                max-width: 500px;
+                margin: 0 auto;
+
+                .wrapper-number-boxs {
+                    position: relative;
+                    overflow: hidden;
+                    width: 300px;
+
+                    .wrapper-btns {
+                        position: relative;
+                        @include flex(space-between, center, row);
+                        flex-direction: row-reverse;
+                        width: 100%;
+
+                        button {
+                            &.active {
+                                background: #ea6d1b;
+                                color: #ffff;
+                            }
+
+                            @include size(51px, 51px);
+                            border: 1.5px solid #ea6d1b;
+                            border-radius: 50%;
+                            font-family: "Bold";
+                            background: transparent;
+                            color: #ea6d1b;
+                            box-sizing: border-box;
+                            box-shadow: 0px 4px 11px rgba(86, 34, 0, 0.27);
+                        }
+                    }
+                }
+
+                #next-page,
+                #prev-page {
+                    border: 1.5px solid #ea6d1b;
+                    border-radius: 50%;
+                    font-family: "Bold";
+                    background: transparent;
+                    color: #ea6d1b;
+                    box-sizing: border-box;
+                    box-shadow: 0px 4px 11px rgba(86, 34, 0, 0.27);
+                    @include size(51px, 51px);
+                }
+            }
+
+            .cursor-line {
+                position: absolute;
+                left: 10%;
+                transform: translateX(54%);
+                top: 70px;
+
+                @include MediaQery($md) {
+                    display: none;
+                }
+            }
+
+            .wrapper-title {
+                padding-top: 120px;
+                padding-bottom: 70px;
+
+                .up-title {
+                    text-align: center;
+                    display: block;
+                    @include upTitlePage();
+                }
+
+                .title {
+                    text-align: center;
+                    @include titlePage();
+
+                    @include MediaQery($md) {
+                        font-size: 36px;
+                    }
+
+                    @include MediaQery($sm) {
+                        font-size: 30px;
+                    }
+                }
+
+                @include MediaQery($md) {
+                    padding-top: 140px;
+                    padding-bottom: 60px;
+                }
+            }
+
+            .wrapper-Tourist-places {
+                @include flex(space-between, center, row);
+                flex-wrap: wrap;
+                row-gap: 100px;
+                align-items: center;
+
+                .box {
+                    @include box();
+                }
+                // @include MediaQery($sm){
+                //     gap: 120px;
+                // }
+            }
+
+            .wrapper-cadr {
+                @include size(1280px, 563px);
+                margin-top: 130px;
+                @include size(100%, 563px);
+                border-radius: 25px;
+                background-image: $bg_2;
+                @include flex(center, center, row);
+
+                img {
+                    position: absolute;
+                    width: 95%;
+                }
+
+                .wrappre-content {
+                    z-index: 88;
+                    @include flex(space-between, center, column);
+                    height: 55%;
+
+                    h4 {
+                        text-align: center;
+                        @include textStyle(48px, $cl_5, "Playfair Display", normal, unset);
+                        line-height: 70px;
+
+                        @include MediaQery($md) {
+                            font-size: 32px;
+                        }
+
+                        @include MediaQery($sm) {
+                            font-size: 23px;
+                            line-height: 2;
+                        }
+
+                        svg {
+                        }
+                    }
+
+                    small {
+                        @include textStyle(18px, $cl_4, Gilroy-Bold, normal, unset);
+                        text-align: center;
+                    }
+
+                    button {
+                        @include button();
+
+                        @include MediaQery($md) {
+                            @include size(230px, 60px);
+                        }
+
+                        font-family: "Medium";
+                    }
+
+                    @include MediaQery($md) {
+                        height: 55%;
+                    }
+
+                    @include MediaQery($sm) {
+                        height: 50%;
+                    }
+                }
+            }
+
+            .best-places {
+                display: grid;
+                grid-template-columns: 33.33333333333333% 33.33333333333333% 33.33333333333333%;
+                padding-top: 120px;
+
+                .box {
+                    @include box();
+
+                    @include MediaQery($xl) {
+                        width: 250px;
+                        height: 350px;
+                    }
+
+                    @include MediaQery($lg) {
+                        width: 100%;
+                        height: 470px;
+                    }
+
+                    @include MediaQery($lg) {
+                        height: 380px;
+                    }
+
+                    @include MediaQery($md) {
+                        height: 400px;
+                    }
+
+                    @include MediaQery($sm) {
+                        height: 600px !important;
+                    }
+                }
+
+                @include MediaQery($lg) {
+                    grid-template-columns: 50% 50%;
+                    gap: 60px;
+                }
+
+                @include MediaQery($md) {
+                    grid-template-columns: 100%;
+                    gap: 100px;
+                }
+            }
+
+            .wrapper-content {
+                @include flex(space-evenly, flex-start, column);
+
+                .title {
+                    @include textStyle(48px, $cl_5, "Playfair Display", normal, unset);
+                    margin: 0;
+
+                    @include MediaQery($xl) {
+                        font-size: 40px;
+                    }
+
+                    @include MediaQery($md) {
+                        font-size: 36px;
+                    }
+
+                    @include MediaQery($sm) {
+                        font-size: 30px;
+                    }
+                }
+
+                .caption {
+                    @include textStyle(18px, $cl_5, "Regular", normal, unset);
+                    margin: 0;
+                    line-height: 2;
+                }
+
+                .wrapper-balance {
+                    @include flex(space-between, center, row);
+                    width: 100%;
+
+                    div {
+                        @include flex(space-between, center, column);
+
+                        h4 {
+                            @include textStyle(36px, $cl_6, "Regular", normal, unset);
+                        }
+
+                        p {
+                            @include textStyle(18px, $cl_4, "Regular", normal, unset);
+
+                            @include MediaQery($xl) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    @include MediaQery($xl) {
+                        justify-content: space-around;
+                    }
+                }
+
+                button {
+                    @include button();
+                    @include size(156px, 56px);
+                }
+
+                @include MediaQery($lg) {
+                    height: 460px;
+                }
+            }
+
+            .container-comments {
+                position: relative;
+                @include size(100%, 705px);
+
+                .bg {
+                    position: absolute;
+                    filter: opacity(0.5);
+                    z-index: -8;
+                    width: 100%;
+                }
+
+                .top-right-photo {
+                    position: absolute;
+                    left: 0;
+                    top: 200px;
+
+                    @include MediaQery($md) {
+                        top: 300px;
+                    }
+                }
+
+                .top-left-photo {
+                    position: absolute;
+                    right: 0;
+                    top: 200px;
+
+                    @include MediaQery($md) {
+                        top: 300px;
+                    }
+                }
+
+                .bottom-left-photo {
+                    bottom: 150px;
+                    right: 200px;
+                    position: absolute;
+
+                    @include MediaQery($md) {
+                        bottom: 150px;
+                        right: 70px;
+                    }
+
+                    @include MediaQery($sm) {
+                        bottom: 150px;
+                        right: 0;
+                    }
+                }
+
+                .top-cebter-photo {
+                    position: absolute;
+                    left: 50%;
+                    top: 80px;
+                    transform: translateX(-50%);
+
+                    @include MediaQery($md) {
+                        top: 0;
+                    }
+                }
+
+                .bottom-right-photo {
+                    right: 0;
+                    bottom: 200px;
+                    position: absolute;
+                    left: 200px;
+
+                    @include MediaQery($md) {
+                        bottom: 150px;
+                        left: 70px;
+                    }
+
+                    @include MediaQery($sm) {
+                        bottom: 150px;
+                        left: 0;
+                    }
+                }
+
+                .wrapper-main-comments {
+                    overflow: hidden;
+
+                    .wrapper-comments {
+                        @include flex(center, center, column);
+                        width: 60%;
+                        height: 80%;
+                        margin: auto;
+
+                        .text-comment {
+                            text-align: center;
+                            line-height: 2;
+                            @include textStyle(16px, $cl_5, "Bold", bold, capitalize);
+
+                            span {
+                                color: $cl_1;
+                            }
+
+                            @include MediaQery($sm) {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .Comment-sender {
+                            text-align: center;
+                            @include textStyle(18px, $cl_5, "Bold", bold, capitalize);
+
+                            span {
+                                color: $cl_4;
+                            }
+                        }
+
+                        .title-sender {
+                            text-align: center;
+                            @include textStyle(18px, $cl_4, "Regular", 500, capitalize);
+                            letter-spacing: 0.3px;
+                        }
+                    }
+                }
+
+                .wrapper-dots-comment {
+                    position: relative;
+                    @include flex(space-between, center, row);
+                    width: 120px;
+                    margin: 0 auto;
+
+                    .dot {
+                        width: 17px;
+                        height: 6px;
+                        @include size(17px, 6px);
+                        display: block;
+                        background: #dfdfdf;
+                        border-radius: 25px;
+                        transition: all 0.8s ease;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $cl_6;
+                        }
+
+                        &.active {
+                            width: 65px;
+                            height: 6px;
+                            background-color: $cl_6;
+                        }
+                    }
+                }
+            }
+        }
+
+        .persepolis {
+            padding: 100px 0;
+
+            .container {
+                .row {
+                    .col-xl-6 {
+                        .wrapper-slider-tour {
+                            position: relative;
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            .top-img {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                column-gap: 5px;
+                            }
+
+                            .bottom-img {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                column-gap: 5px;
+                                flex-direction: row-reverse;
+                            }
+
+                            img {
+                            }
+
+                            .wrapper-dots-comment {
+                                position: relative;
+                                @include flex(space-between, center, row);
+                                width: 120px;
+                                margin: 0 auto;
+
+                                .dot {
+                                    width: 17px;
+                                    height: 6px;
+                                    @include size(17px, 6px);
+                                    display: block;
+                                    background: #dfdfdf;
+                                    border-radius: 25px;
+                                    transition: all 0.8s ease;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                        background-color: $cl_6;
+                                    }
+
+                                    &.active {
+                                        width: 65px;
+                                        height: 6px;
+                                        background-color: $cl_6;
+                                    }
+                                }
+                            }
+                        }
+
+                        .wrapper-caption-infoTour {
+                            .title {
+                                @include textStyle(50px, $cl_5, unset, unset, capitalize);
+                                font-family: "Playfair Display", serif, normal;
+                                text-align: start;
+                                line-height: 1.5;
+
+                                span {
+                                    color: $cl_1;
+                                }
+
+                                @include MediaQery($xl) {
+                                    font-size: 45px;
+                                }
+
+                                @include MediaQery($md) {
+                                    font-size: 37px;
+                                }
+
+                                position: relative;
+
+                                @include MediaQery($md) {
+                                    font-size: 36px;
+                                }
+
+                                @include MediaQery($sm) {
+                                    font-size: 30px;
+                                }
+                            }
+
+                            .caption {
+                                @include textStyle(18px, $cl_5, "Regular", normal, unset);
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 2;
+
+                                @include MediaQery($md) {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            #price {
+                                font-family: "Bold";
+
+                                span {
+                                    color: $cl_6;
+                                }
+                            }
+
+                            button {
+                                @include button();
+
+                                @include MediaQery($md) {
+                                    @include size(230px, 60px);
+                                }
+
+                                font-family: "Medium";
+                            }
+
+                            @include MediaQery($lg) {
+                                gap: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .services {
+            padding: 100px 0;
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                row-gap: 60px;
+
+                .title {
+                    @include textStyle(50px, $cl_5, unset, unset, capitalize);
+                    font-family: "Playfair Display", serif, normal;
+                    text-align: center;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 55px;
+                        height: 4px;
+                        background-color: $cl_6;
+                        bottom: -8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-radius: 25px;
+                    }
+                }
+
+                .row {
+                    .col-12 {
+                        .box-services {
+                            height: 449px;
+                            max-width: 380px !important;
+                            background: #ffffff;
+                            box-shadow: 0px 12px 35px rgba(27, 11, 0, 0.04);
+                            border-radius: 25px;
+                            @include flex(space-evenly, center, column);
+
+                            small {
+                                text-align: center;
+                                line-height: 2;
+                                @include textStyle(16px, $cl_5, "Bold", bold, capitalize);
+
+                                span {
+                                    color: $cl_1;
+                                }
+                            }
+
+                            p {
+                                text-align: center;
+                                line-height: 2;
+                                @include textStyle(16px, $cl_4, "Regular", normal, capitalize);
+                            }
+
+                            a {
+                                text-align: center;
+                                @include textStyle(16px, $cl_6, "Regular", normal, capitalize);
+                            }
+
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Aboat {
+            padding: 100px 0;
+
+            .container {
+                .title {
+                    @include textStyle(50px, $cl_5, unset, unset, capitalize);
+                    font-family: "Playfair Display", serif, normal;
+                    text-align: center;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 55px;
+                        height: 4px;
+                        background-color: $cl_6;
+                        bottom: -8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-radius: 25px;
+                    }
+
+                    margin-bottom: 70px;
+
+                    @include MediaQery($md) {
+                        font-size: 36px;
+                    }
+
+                    @include MediaQery($sm) {
+                        font-size: 30px;
+                    }
+                }
+
+                .row {
+                    .col-12 {
+                        .wrapper {
+                            @include flex(center, center, column);
+                            height: 70%;
+
+                            .caption {
+                                @include textStyle(18px, $cl_5, "Regular", normal, unset);
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 1.5;
+                                padding-top: 50px;
+
+                                @include MediaQery($md) {
+                                    font-size: 16px;
+                                }
+
+                                @include MediaQery($sm) {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            .container-Reaction {
+                                @include size(319px, 140px);
+                                position: absolute;
+                                background: #fff;
+                                bottom: -37px;
+                                right: 108px;
+                                background: #ffffff;
+                                box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.09);
+                                border-top-right-radius: 44%;
+                                z-index: 5;
+
+                                @include MediaQery($sm) {
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .say-about {
+            padding: 100px 0;
+
+            .container {
+                .title {
+                    @include textStyle(50px, $cl_5, unset, unset, capitalize);
+                    font-family: "Playfair Display", serif, normal;
+                    text-align: center;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 55px;
+                        height: 4px;
+                        background-color: $cl_6;
+                        bottom: -8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-radius: 25px;
+                    }
+
+                    margin-bottom: 70px;
+
+                    @include MediaQery($md) {
+                        font-size: 36px;
+                    }
+
+                    @include MediaQery($sm) {
+                        font-size: 30px;
+                    }
+                }
+
+                .row {
+                    .col-12 {
+                        .wrapper-person-info {
+                            background: #ffffff;
+                            box-shadow: 0px 12px 35px rgba(27, 11, 0, 0.04);
+                            border-radius: 25px;
+                            @include size(400px, 360px);
+                            padding: 15px 25px;
+
+                            .wrapper {
+                                display: flex;
+                                align-items: center;
+
+                                .wrapper-text-person {
+                                    margin-left: 30px;
+                                }
+                            }
+
+                            .caption {
+                                @include textStyle(18px, $cl_5, "Regular", normal, unset);
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 1.5;
+
+                                @include MediaQery($md) {
+                                    font-size: 16px;
+                                }
+
+                                @include MediaQery($md) {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            @include MediaQery($lg) {
+                                margin: 0 auto;
+                            }
+
+                            @include MediaQery($md) {
+                                padding: 0;
+                                width: 350px;
+                                margin: 0 auto;
+                            }
+
+                            @include MediaQery($sm) {
+                                width: 270px;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .login {
+
+            .row {
+                .wrapper-login {
+                    padding-left: 60px;
+
+                    @include MediaQery($lg) {
+                        padding: 0 15px;
+                    }
+
+                    nav {
+                        @include flex(flex-start, center, row);
+                        @include size(100%, 100px);
+
+                        .bg-brand {
+                            @include size(39px, 25px);
+                            background-image: url(../image/photo-brand.png);
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+
+                        h5 {
+                            margin: 0;
+                            padding-left: 8px;
+                            @include titleFooter();
+                            font-size: 24px !important;
+                            background: -webkit-linear-gradient($cl_1, $cl_9);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+
+                    .wrapper-login-main {
+                        .top-login {
+                            height: 210px;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            display: flex;
+
+                            .title {
+                                @include titleFooter();
+                                font-size: 36px !important;
+                                color: $cl_5;
+
+                                @include MediaQery($md) {
+                                    font-size: 27px !important;
+                                }
+                            }
+
+                            .sub-title {
+                                @include titleFooter();
+                                font-size: 18px !important;
+                                color: $cl_5;
+                                text-transform: unset;
+                                font-weight: 500;
+                            }
+
+                            button {
+                                @include buttonLogin();
+
+                                &.sign-in {
+                                    background-color: $cl_11 !important;
+                                }
+                            }
+
+                            h5 {
+                                padding-left: 8px;
+                                margin: 0;
+                                @include titleFooter();
+                                font-size: 22px;
+                                color: $cl_5;
+                                text-transform: unset;
+                            }
+                        }
+
+                        #form-login, #form-signUp {
+                            @include flex(space-evenly, unset, column);
+                            height: 450px;
+                            margin: 0;
+
+                            @include MediaQery($xl2) {
+                                height: 480px;
+                            }
+
+                            fieldset {
+                                width: 90%;
+                                min-width: unset;
+                                padding: unset;
+                                margin: unset;
+                                border: none;
+                                border-top: 1px solid $cl_10;
+
+                                @include MediaQery($xl2) {
+                                    width: 100%;
+                                }
+                            }
+
+                            legend {
+                                float: unset;
+                                width: unset;
+                                padding: 0;
+                                margin-bottom: unset;
+                                text-align: center;
+                                line-height: unset;
+                                padding: 0 18px;
+                                margin: 0;
+                                @include titleFooter();
+                                font-size: 18px !important;
+                                color: $cl_10;
+                                text-transform: unset;
+                                font-weight: 500;
+                            }
+
+                            .wrapper-form {
+                                .wrapper-title-input {
+                                    @include flex(space-between,center,row);
+                                    width: 90%;
+
+                                    label {
+                                        @include titleFooter();
+                                        font-size: 20px !important;
+                                        color: $cl_5;
+                                        font-weight: 600;
+
+                                        @include MediaQery($lg) {
+                                            height: 65px;
+                                        }
+
+                                        @include MediaQery($md) {
+                                            @include flex(space-between,flex-start,column);
+                                        }
+
+                                        @include MediaQery($sm) {
+                                            font-size: 18px !important;
+                                        }
+
+                                        small {
+                                            @extend label;
+                                            font-weight: 400;
+                                            font-size: 14px !important;
+
+                                            @include MediaQery($sm) {
+                                                font-size: 14px !important;
+                                            }
+                                        }
+                                    }
+
+                                    .wrapper-resend {
+                                        @include flex(space-between,center,row);
+                                        width: 95px;
+
+                                        p {
+                                            margin: 0;
+                                            @include titleFooter();
+                                            font-size: 18px !important;
+                                            color: $cl_6;
+                                            text-transform: unset;
+                                            font-weight: 500;
+                                        }
+
+                                        svg {
+                                            cursor: pointer;
+
+                                            &.active {
+                                                animation: rotate 0.7s linear both;
+                                                transition: all 0.5s linear;
+                                            }
+
+                                            @keyframes rotate {
+                                                0% {
+                                                    transform: rotate(0deg);
+                                                }
+
+                                                100% {
+                                                    transform: rotate(180deg);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    @include MediaQery($xl2) {
+                                        width: 100%;
+                                    }
+                                }
+
+                                input {
+                                    width: 90%;
+                                    height: 76px;
+                                    padding: 0 30px;
+
+                                    &::placeholder {
+                                        @include titleFooter();
+                                        font-size: 18px !important;
+                                        color: $cl_10;
+                                        text-transform: unset;
+                                        font-weight: 400;
+                                        width: 90%;
+                                        height: 76px;
+
+                                        @include MediaQery($md) {
+                                            font-size: 16px !important;
+                                        }
+                                    }
+
+                                    background: #ffffff;
+                                    border: 1px solid #e0e0e0 !important;
+                                    box-sizing: border-box;
+                                    border-radius: 5px;
+
+                                    @include titleFooter();
+                                    font-size: 18px !important;
+                                    color: $cl_5;
+                                    text-transform: unset;
+                                    font-weight: 400;
+
+                                    &:focus {
+                                        outline: 1px solid $cl_9;
+                                    }
+
+                                    @include MediaQery($xl2) {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .wrapper-form-two {
+                                @include flex(space-between, flex-start, column);
+                                height: 135px;
+
+                                @include MediaQery($xl2) {
+                                    height: 170px;
+                                }
+
+                                button {
+                                    @include buttonLogin();
+
+                                    h5 {
+                                        color: $cl_10;
+                                    }
+
+                                    pointer-events: none;
+                                    cursor: not-allowed;
+
+                                    &.active {
+                                        background-color: $cl_6;
+                                        cursor: pointer;
+                                        pointer-events: painted;
+
+                                        h5 {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+
+                                .wrapper-buttom-form {
+                                    @include flex(space-between, center, row);
+                                    flex-wrap: wrap;
+                                    row-gap: 20px;
+                                    ;
+                                    width: 90%;
+
+                                    @include MediaQery($xl2) {
+                                        @include flex(space-between, center, column);
+                                        row-gap: 20px;
+                                    }
+
+                                    @include MediaQery($lg) {
+                                        @include flex(space-between, center, row);
+                                        width: 100%;
+                                    }
+
+                                    p {
+                                        margin: 0;
+                                        @include titleFooter();
+                                        font-size: 18px !important;
+                                        color: $cl_10;
+                                        text-transform: unset;
+                                        font-weight: 500;
+
+                                        a {
+                                            @include titleFooter();
+                                            font-size: 20px !important;
+                                            color: $cl_5;
+                                            font-weight: 600;
+                                            text-decoration: underline !important;
+                                        }
+
+                                        @include MediaQery($sm) {
+                                            font-size: 17px !important;
+                                        }
+                                    }
+
+                                    .wrapper-checkbox {
+                                        @include styleingCheckBox();
+                                    }
+                                }
+                            }
+
+                            &.create-Ac {
+                                height: 650px;
+                            }
+                        }
+                    }
+                }
+
+                .wrapper-carecator {
+                    background-color: $cl_8;
+                    position: relative;
+
+                    .wrapper-top {
+                        img {
+                            position: absolute;
+                        }
+
+                        .Vector-top-righ {
+                            right: 0;
+
+                            @include MediaQery($xl2) {
+                                width: 205px;
+                            }
+
+                            @include MediaQery($lg) {
+                                width: auto;
+                            }
+                        }
+
+                        .Vector-bottom-center {
+                            bottom: 0;
+                            @include size(560.43px, 383px);
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            @include MediaQery($xl2) {
+                                @include size(502px,349px)
+                            }
+
+                            @include MediaQery($lg) {
+                                @include size(auto,auto)
+                            }
+                        }
+
+                        .Vector-bottom-center-location {
+                            right: 0;
+                            bottom: 342px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        .Vector-buttom-right-1 {
+                            bottom: 80px;
+                            right: 334px;
+                        }
+
+                        .Vector-center-right-location-right {
+                            bottom: 120px;
+                            right: 187px;
+                        }
+
+                        .Vector-center-left-location-right {
+                            bottom: 35px;
+                            left: 87px;
+                        }
+
+                        .person-turist-Arman {
+                            z-index: 4;
+                            bottom: 0;
+                            transform: translateX(-50%);
+                            left: 50%;
+                        }
+
+                        .Vector-buttom-right-2 {
+                            bottom: 0;
+                            right: 10px;
+                        }
+
+                        .Vector-buttom-right-3 {
+                            bottom: 0;
+                            right: 0px;
+                        }
+
+                        .Vector-buttom-right-4 {
+                            bottom: 0;
+                            right: 180px;
+                        }
+
+                        .Vector-buttom-right-5 {
+                            bottom: 100px;
+                            right: 180px;
+                        }
+
+                        .Vector-buttom-right-6 {
+                            bottom: 0;
+                            right: 102px;
+                        }
+
+                        .Vector-top-center {
+                            left: 50%;
+                            transform: translate(-71%, 87px);
+                        }
+
+                        .Vector-top-left {
+                            left: 0;
+                            transform: translateY(37px);
+                        }
+
+                        .Vector-top-left-bottom {
+                            @extend .Vector-top-left;
+                            transform: translateY(142px);
+                            left: 118px;
+                        }
+
+                        .Vector-top-location {
+                            right: 120px;
+                            top: 136px;
+                        }
+
+                        .wrapper-arrow-Curved {
+                            width: 50%;
+                            position: relative;
+
+                            .Vector-top-Curved-arrow {
+                                z-index: 4444;
+                            }
+
+                            .Vector-top-Arrows-curved {
+                                top: 157px;
+                                z-index: 4;
+                                transform: translateX(356px);
+                            }
+                        }
+                    }
+
+                    .wrapper-center {
+                        img {
+                            position: absolute;
+                        }
+
+                        position: relative;
+                        top: 29%;
+
+                        .Vector-center-left-bottom {
+                            top: 50%;
+                            left: 0;
+                        }
+
+                        .Vector-center-left-location {
+                            top: 50px;
+                            left: 57px;
+                        }
+
+                        .Vector-center-right-curved {
+                            top: 100px;
+                            right: 200px;
+                        }
+                    }
+
+                    @include MediaQery($lg) {
+                        height: 1024px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 100px;
+        /*-----------*/
+        &.hide {
+            display: none;
+        }
+        /*-----------*/
+        background-color: $bg_3;
+        display: flex;
+        align-items: center;
+        padding: 50px 10px;
+
+        .container {
+            .wrapper-footer {
+                @include flex(space-between, center, row);
+                flex-wrap: wrap;
+                gap: 20px;
+                row-gap: 35px;
+
+                .columny {
+                    height: 200px;
+                    @include flex(space-around, flex-start, column);
+
+                    .wrapper-name-site {
+                        @include flex(space-between, center, row-reverse);
+                        width: 43%;
+
+                        .title {
+                            @include titleFooter();
+                            letter-spacing: 0.5px;
+                        }
+
+                        @include MediaQery($md) {
+                            width: 55%;
+                        }
+                    }
+
+                    .Definition-of-self {
+                        @include captionFooter();
+                    }
+                }
+
+                .column-two {
+                    align-items: center;
+
+                    .title {
+                        @include titleFooter();
+                    }
+
+                    .menu-about {
+                        margin: 0;
+                        padding: 0;
+                        @include flex(space-between, flex-start, column);
+                        gap: 17px;
+
+                        li {
+                            a {
+                                @include textStyle(18px, white, "Light", normal, capitalize);
+                            }
+                        }
+                    }
+
+                    .title {
+                    }
+                }
+
+                .column-three {
+                    .title {
+                        @include titleFooter();
+                    }
+
+                    .caption {
+                        @include captionFooter();
+                    }
+
+                    .wrapper-Social-Networks {
+                        display: flex;
+                        gap: 20px;
+
+                        @include MediaQery($lg) {
+                            gap: 10px;
+                        }
+                    }
+                }
+
+                .column-four {
+                    .title {
+                        @include titleFooter();
+                    }
+
+                    .caption {
+                        @include captionFooter();
+                    }
+
+                    .wrapper-email {
+                        position: relative;
+
+                        input {
+                            border: none;
+                            outline: none;
+                            @include size(255px, 56px);
+                            background: rgba(0, 0, 0, 0.19);
+                            backdrop-filter: blur(74px);
+                            /* Note: backdrop-filter has minimal browser support */
+                            border-radius: 59px;
+                            padding: 5px 20px;
+                            color: #fafafa;
+                            font-family: "Regular";
+
+                            &::placeholder {
+                                color: #b6b6b6;
+                            }
+                        }
+
+                        img {
+                            position: absolute;
+                            right: 0;
+                            top: 7px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
