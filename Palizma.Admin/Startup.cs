@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Palizma.Application.Interfaces.Contexts;
+using Palizma.Application.Visitors.GetTodayReport;
 using Palizma.Persistence.Contexts;
+using Palizma.Persistence.Contexts.MongoContext;
 
 namespace Palizma.Admin
 {
@@ -19,8 +21,8 @@ namespace Palizma.Admin
             services.AddRazorPages()/*.AddRazorRuntimeCompilation()*/;
             services.AddControllers();
 
-            //services.AddScoped<IGetTodayReportService, GetTodayReportService>();
-            //services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
+            services.AddScoped<IGetTodayReportService, GetTodayReportService>();
+            services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
             //services.AddTransient<ICatalogTypeService, CatalogTypeService>();
             //services.AddTransient<IAddNewCatalogItemService,  AddNewCatalogItemService>();
             //services.AddTransient<ICatalogItemService,  CatalogItemService>();

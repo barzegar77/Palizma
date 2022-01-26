@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Palizma.Application.Email;
 using Palizma.Application.Interfaces.Contexts;
 using Palizma.Application.Visitors.SaveVisitorInfo;
 using Palizma.Application.Visitors.VisitorOnline;
@@ -41,7 +42,7 @@ namespace Palizma.Web
             });
             #endregion
 
-
+            services.AddTransient<IEmailService, EmailService>();
             services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
             services.AddTransient<ISaveVisitorInfoService, SaveVisitorInfoService>();
             services.AddTransient<IIVisitorOnlineService, VisitorOnlineService>();

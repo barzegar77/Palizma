@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Palizma.Application.Interfaces.Contexts;
 using Palizma.Domain.Attributes;
+using Palizma.Domain.Catalogs;
 using Palizma.Domain.Users;
+using Palizma.Persistence.EntityConfigurations;
 
 namespace Palizma.Persistence.Contexts
 {
@@ -11,6 +13,24 @@ namespace Palizma.Persistence.Contexts
         {
         }
 
+        public DbSet<CatalogBrand> CatalogBrands { get; set; }
+        public DbSet<CatalogType> CatalogTypes { get; set; }
+        public DbSet<CatalogItem> CatalogItems { get; set; }
+
+        //public DbSet<Basket> Baskets { get; set; }
+        //public DbSet<BasketItem> BasketItems { get; set; }
+
+
+        //public DbSet<UserAddress> UserAddresses { get; set; }
+
+        //public DbSet<Order> Orders { get; set; }
+        //public DbSet<OrderItem> OrderItems { get; set; }
+        //public DbSet<Payment> Payments { get; set; }
+        //public DbSet<Discount> Discount { get; set; }
+        //public DbSet<DiscountUsageHistory> DiscountUsageHistories { get; set; }
+        //public DbSet<CatalogItemFavourite> CatalogItemFavourites { get; set; }
+        //public DbSet<Banner> Banners { get; set; }
+        //public DbSet<CatalogItemComment> CatalogItemComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -27,13 +47,13 @@ namespace Palizma.Persistence.Contexts
                     builder.Entity(entityType.Name).Property<bool>("IsRemoved").HasDefaultValue(false);
                 }
             }
-            //builder.Entity<CatalogType>()
-            //    .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
+            builder.Entity<CatalogType>()
+                .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
 
 
 
-            //builder.ApplyConfiguration(new CatalogBrandEntityTypeConfiguration());
-            //builder.ApplyConfiguration(new CatalogTypeEntityTypeConfiguration());
+            builder.ApplyConfiguration(new CatalogBrandEntityTypeConfiguration());
+            builder.ApplyConfiguration(new CatalogTypeEntityTypeConfiguration());
 
             //DataBaseContextSeed.CatalogSeed(builder);
 

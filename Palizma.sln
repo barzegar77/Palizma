@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palizma.Common", "Palizma.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palizma.Web", "Palizma.Web\Palizma.Web.csproj", "{9F69D8FE-A7BE-4BF8-8C4F-AB32BFAB55D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palizma.Admin", "Palizma.Admin\Palizma.Admin.csproj", "{4B49B3EB-FA5A-4DCD-BEB2-D792CE9826A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palizma.Admin", "Palizma.Admin\Palizma.Admin.csproj", "{4B49B3EB-FA5A-4DCD-BEB2-D792CE9826A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
